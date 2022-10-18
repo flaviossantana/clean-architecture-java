@@ -27,7 +27,11 @@ class AlunoTest {
 
     @Test
     void deveriaAdicionarUmTelefoneAoAluno() {
-        aluno.adicionarTelefone("11", "12345678");
+        aluno = AlunoBuilder
+                .init("123.456.789-00", "joao@email.com", "Joao da Silva")
+                .telefone("11", "999999999")
+                .build();
+
         assertEquals(1, aluno.getTelefones().size());
     }
 

@@ -1,5 +1,6 @@
 package com.school.clear.model;
 
+import com.school.clear.builder.AlunoBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,9 @@ class AlunoTest {
 
     @BeforeEach
     public void setup() {
-        aluno = new Aluno("João", new CPF("123.456.789-01"), new Email("silva@email.com"));
+        aluno = AlunoBuilder
+                .init("123.456.789-00", "joao@email.com", "Joao da Silva")
+                .build();
     }
 
     @Test
@@ -31,7 +34,9 @@ class AlunoTest {
     @Test
     void deveriaRetornarExcecaoDeCpfInvalido() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Aluno("João", new CPF("123.456.89-01"), new Email("silva@email.com"));
+            AlunoBuilder
+                    .init("123.456.79-00", "joao@email.com", "Joao da Silva")
+                    .build();
         });
     }
 

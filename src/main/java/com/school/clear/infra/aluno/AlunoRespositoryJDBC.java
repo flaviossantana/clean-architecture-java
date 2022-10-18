@@ -1,12 +1,10 @@
 package com.school.clear.infra.aluno;
 
-import com.school.clear.domain.aluno.Aluno;
-import com.school.clear.domain.aluno.AlunoRespository;
-import com.school.clear.domain.aluno.CPF;
-import com.school.clear.domain.aluno.Telefone;
+import com.school.clear.domain.aluno.*;
 import com.school.clear.domain.builder.AlunoBuilder;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlunoRespositoryJDBC implements AlunoRespository {
@@ -49,7 +47,7 @@ public class AlunoRespositoryJDBC implements AlunoRespository {
             ps.setString(1, cpf.getNumero());
             var rs = ps.executeQuery();
             if (!rs.next()) {
-                return null;
+                throw new AlunoNaoEncontradoException(cpf);
             }
             return AlunoBuilder.init(
                     rs.getString("cpf"),
@@ -63,8 +61,22 @@ public class AlunoRespositoryJDBC implements AlunoRespository {
 
     @Override
     public List<Aluno> listarTodosAlunosMatriculados() {
-        // TODO Auto-generated method stub
-        return null;
+        try{
+            String sql = "SELECT * FROM ALUNO";
+            var ps = connection.prepareStatement(sql);
+            var rs = ps.executeQuery();
+            List<Aluno> alunos = new ArrayList<>();
+            while (rs.next()) {
+                alunos.add(AlunoBuilder.init(
+                        rs.getString("cpf"),
+                        rs.getString("email"),
+                        rs.getString("nome")
+                ).build());
+            }
+            return alunos;
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

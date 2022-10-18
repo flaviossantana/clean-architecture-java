@@ -21,6 +21,10 @@ public class Aluno {
         this.telefones.add(new Telefone(ddd, numero));
     }
 
+    public void adicionarTelefone(Telefone telefone) {
+        this.telefones.add(telefone);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -36,4 +40,5 @@ public class Aluno {
     public List<Telefone> getTelefones() {
         return telefones;
     }
+
 }

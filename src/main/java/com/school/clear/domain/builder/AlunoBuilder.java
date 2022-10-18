@@ -1,9 +1,9 @@
-package com.school.clear.builder;
+package com.school.clear.domain.builder;
 
-import com.school.clear.model.Aluno;
-import com.school.clear.model.CPF;
-import com.school.clear.model.Email;
-import com.school.clear.model.Telefone;
+import com.school.clear.domain.aluno.Aluno;
+import com.school.clear.domain.aluno.CPF;
+import com.school.clear.domain.aluno.Email;
+import com.school.clear.domain.aluno.Telefone;
 
 import java.util.ArrayList;
 import java.util.List;

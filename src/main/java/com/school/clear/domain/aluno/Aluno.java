@@ -1,4 +1,4 @@
-package com.school.clear.model;
+package com.school.clear.domain.aluno;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.school.clear.model;
+package com.school.clear.domain.indicacao;
+
+import com.school.clear.domain.aluno.Aluno;
 
 import java.time.LocalDateTime;
 

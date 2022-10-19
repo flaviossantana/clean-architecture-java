@@ -1,6 +1,7 @@
 package com.school.clear.application.aluno.matricula;
 
 import com.school.clear.domain.aluno.Aluno;
+import com.school.clear.domain.aluno.CPF;
 import com.school.clear.domain.builder.AlunoBuilder;
 
 public class MatricularAlunoDTO {
@@ -17,5 +18,17 @@ public class MatricularAlunoDTO {
 
     public Aluno criarAluno() {
         return AlunoBuilder.init(cpf, email, nome).build();
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

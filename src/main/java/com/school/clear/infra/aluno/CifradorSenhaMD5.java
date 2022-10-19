@@ -1,6 +1,6 @@
 package com.school.clear.infra.aluno;
 
-import com.school.clear.domain.aluno.CifradorSenha;
+import com.school.clear.facade.aluno.CifradorSenha;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

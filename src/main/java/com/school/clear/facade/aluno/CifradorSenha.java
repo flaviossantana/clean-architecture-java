@@ -1,4 +1,4 @@
-package com.school.clear.domain.aluno;
+package com.school.clear.facade.aluno;
 
 public interface CifradorSenha {
         String cifrarSenha(String senha);

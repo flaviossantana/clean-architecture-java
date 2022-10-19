@@ -1,4 +1,7 @@
-package com.school.clear.domain.aluno;
+package com.school.clear.facade.aluno;
+
+import com.school.clear.domain.aluno.Aluno;
+import com.school.clear.domain.aluno.CPF;
 
 import java.util.List;
 

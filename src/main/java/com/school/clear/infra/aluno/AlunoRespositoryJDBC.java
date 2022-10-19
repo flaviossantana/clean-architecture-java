@@ -2,6 +2,7 @@ package com.school.clear.infra.aluno;
 
 import com.school.clear.domain.aluno.*;
 import com.school.clear.domain.builder.AlunoBuilder;
+import com.school.clear.facade.aluno.AlunoRespository;
 
 import java.sql.Connection;
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package com.school.clear.infra.aluno;
 
 import com.school.clear.domain.aluno.Aluno;
 import com.school.clear.domain.aluno.AlunoNaoEncontradoException;
-import com.school.clear.domain.aluno.AlunoRespository;
+import com.school.clear.facade.aluno.AlunoRespository;
 import com.school.clear.domain.aluno.CPF;
 
 import java.util.ArrayList;
